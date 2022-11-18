@@ -125,14 +125,14 @@ class phpGPX
 		// Parse creator
 		$gpx->creator = isset($xml['creator']) ? (string)$xml['creator'] : null;
 		
-		// Parse name
-		$gpx->name = isset($xml['name']) ? (string)$xml['name'] : null;
-
-		// Parse description
-		$gpx->creator = isset($xml['description']) ? (string)$xml['description'] : null;
-
 		// Parse metadata
 		$gpx->metadata = isset($xml->metadata) ? MetadataParser::parse($xml->metadata) : null;
+
+		// Parse name
+		$gpx->name = isset($xml->metadata->name) ? (string)$xml->metadata->name : null;
+
+		// Parse description
+		$gpx->description = isset($xml->metadata->description) ? (string)$xml->metadata->description : null;
 
 		// Parse waypoints
 		$gpx->waypoints = isset($xml->wpt) ? WaypointParser::parse($xml->wpt) : [];
