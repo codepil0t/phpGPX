@@ -124,6 +124,9 @@ class phpGPX
 
 		// Parse creator
 		$gpx->creator = isset($xml['creator']) ? (string)$xml['creator'] : null;
+		
+		// Parse name
+		$gpx->name = isset($xml['name']) ? (string)$xml['name'] : null;
 
 		// Parse description
 		$gpx->creator = isset($xml['description']) ? (string)$xml['description'] : null;

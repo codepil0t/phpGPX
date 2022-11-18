@@ -58,6 +58,12 @@ class GpxFile implements Summarizable
 	public $creator;
 	
 	/**
+	 * Name of GPX file.
+	 * @var string|null
+	 */
+	public $name;
+	
+	/**
 	 * Description of GPX file.
 	 * @var string|null
 	 */
